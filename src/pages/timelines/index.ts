@@ -1,1 +1,1 @@
-export { default } from './Timelines';
+export { default } from './page';

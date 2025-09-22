@@ -14,9 +14,29 @@
 }
 
 * {
-  padding: 0;
-  margin: 0;
+  /* padding: 0;
+  margin: 0; */
   box-sizing: border-box;
+}
+
+.page-loading {
+  opacity: 0.25;
+  transition: opacity 200ms;
+  transition-delay: 200ms;
+}
+
+.default-transition {
+  transition: all 200ms ease-in-out;
+}
+
+.not-full-page {
+  @apply relative h-full w-full;
+}
+
+.loader-container {
+  @apply absolute top-0 left-0 z-20;
+  @apply flex h-full w-full items-center justify-center;
+  @apply bg-[rgb(18,18,18)] opacity-50 dark:bg-[rgb(255,255,255)];
 }
 
 /* a {
