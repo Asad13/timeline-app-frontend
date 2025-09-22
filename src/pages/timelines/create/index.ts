@@ -1,1 +1,1 @@
-export { default } from './CreateTimeline';
+export { default } from './page';
