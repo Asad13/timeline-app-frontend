@@ -1,6 +1,6 @@
 import { Suspense, type SuspenseProps } from 'react';
 import ErrorBoundary from '../ErrorBoundary';
-import Loader from '@/components/common/Loader/Loader';
+import Loader from '@/components/common/Loader';
 
 const SuspenseWithErrorBoundary = ({ children, fallback, name }: SuspenseProps) => {
   return (

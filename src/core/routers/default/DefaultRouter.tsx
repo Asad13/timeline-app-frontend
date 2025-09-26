@@ -44,23 +44,28 @@ const DefaultRouter: Array<RouteObject> = [
               },
               {
                 path: ':id',
-                lazy: async () => {
-                  const { default: Component } = await Promise.resolve(
-                    import('@/pages/timelines/[id]'),
-                  );
+                children: [
+                  {
+                    index: true,
+                    lazy: async () => {
+                      const { default: Component } = await Promise.resolve(
+                        import('@/pages/timelines/[id]'),
+                      );
 
-                  return { Component };
-                },
-              },
-              {
-                path: ':id/edit',
-                lazy: async () => {
-                  const { default: Component } = await Promise.resolve(
-                    import('@/pages/timelines/[id]/edit'),
-                  );
+                      return { Component };
+                    },
+                  },
+                  {
+                    path: 'edit',
+                    lazy: async () => {
+                      const { default: Component } = await Promise.resolve(
+                        import('@/pages/timelines/[id]/edit'),
+                      );
 
-                  return { Component };
-                },
+                      return { Component };
+                    },
+                  },
+                ],
               },
             ],
           },
